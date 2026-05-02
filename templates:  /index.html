@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>24시간 주요 뉴스 요약</title>
+    <style>
+        body { font-family: sans-serif; max-width: 800px; margin: 0 auto; padding: 20px; line-height: 1.6; }
+        h1 { border-bottom: 2px solid #333; padding-bottom: 10px; }
+        .news-item { margin-bottom: 20px; border-bottom: 1px solid #eee; padding-bottom: 10px; }
+        .news-item a { text-decoration: none; color: #007bff; font-weight: bold; font-size: 1.2em; }
+        .news-item p { margin: 5px 0; color: #666; font-size: 0.9em; }
+    </style>
+</head>
+<body>
+    <h1>📰 24시간 주요 뉴스</h1>
+    {% for item in news %}
+    <div class="news-item">
+        <a href="{{ item.link }}" target="_blank">{{ item.title }}</a>
+        <p>발행일: {{ item.date }}</p>
+    </div>
+    {% endfor %}
+</body>
+</html>
