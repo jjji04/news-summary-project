@@ -16,7 +16,7 @@ def clean_html(raw_html):
     if not raw_html:
         return ""
     
-    # 1. &nbsp; &middot; 등을 실제 문자로 변환
+    # 1. &nbsp; &middot; 등을 실제 문자로 변화
     decoded_text = html.unescape(raw_html)
     
     # 2. <태그> 제거
