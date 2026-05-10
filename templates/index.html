@@ -2,21 +2,22 @@
 <html lang="ko">
 <head>
     <meta charset="UTF-8">
-    <title>24시간 주요 뉴스 요약</title>
+    <title>AI 뉴스 요약 대시보드</title>
     <style>
-        body { font-family: sans-serif; max-width: 800px; margin: 0 auto; padding: 20px; line-height: 1.6; }
-        h1 { border-bottom: 2px solid #333; padding-bottom: 10px; }
-        .news-item { margin-bottom: 20px; border-bottom: 1px solid #eee; padding-bottom: 10px; }
-        .news-item a { text-decoration: none; color: #007bff; font-weight: bold; font-size: 1.2em; }
-        .news-item p { margin: 5px 0; color: #666; font-size: 0.9em; }
+        body { font-family: sans-serif; line-height: 1.6; max-width: 800px; margin: 0 auto; padding: 20px; }
+        .news-item { border-bottom: 1px solid #eee; padding: 15px 0; }
+        .news-title { font-size: 1.2em; color: #1a0dab; text-decoration: none; }
+        .news-date { font-size: 0.85em; color: #70757a; }
+        .news-summary { color: #4d5156; margin-top: 8px; font-size: 0.95em; }
     </style>
 </head>
 <body>
-    <h1>📰 24시간 주요 뉴스</h1>
+    <h1>🗞️ 지난 24시간 주요 뉴스</h1>
     {% for item in news %}
     <div class="news-item">
-        <a href="{{ item.link }}" target="_blank">{{ item.title }}</a>
-        <p>발행일: {{ item.date }}</p>
+        <a href="{{ item.link }}" class="news-title" target="_blank">{{ item.title }}</a>
+        <div class="news-date">발행: {{ item.date }}</div>
+        <div class="news-summary">{{ item.summary }}</div>
     </div>
     {% endfor %}
 </body>
